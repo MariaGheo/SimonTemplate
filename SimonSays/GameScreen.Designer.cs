@@ -32,6 +32,8 @@
             this.blueButton = new System.Windows.Forms.Button();
             this.redButton = new System.Windows.Forms.Button();
             this.greenButton = new System.Windows.Forms.Button();
+            this.patternLabel = new System.Windows.Forms.Label();
+            this.lengthLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // yellowButton
@@ -41,7 +43,9 @@
             this.yellowButton.Name = "yellowButton";
             this.yellowButton.Size = new System.Drawing.Size(110, 110);
             this.yellowButton.TabIndex = 3;
+            this.yellowButton.Tag = "2";
             this.yellowButton.UseVisualStyleBackColor = false;
+            this.yellowButton.Click += new System.EventHandler(this.anyButton_Click);
             // 
             // blueButton
             // 
@@ -50,7 +54,9 @@
             this.blueButton.Name = "blueButton";
             this.blueButton.Size = new System.Drawing.Size(110, 110);
             this.blueButton.TabIndex = 2;
+            this.blueButton.Tag = "3";
             this.blueButton.UseVisualStyleBackColor = false;
+            this.blueButton.Click += new System.EventHandler(this.anyButton_Click);
             // 
             // redButton
             // 
@@ -59,7 +65,9 @@
             this.redButton.Name = "redButton";
             this.redButton.Size = new System.Drawing.Size(110, 110);
             this.redButton.TabIndex = 1;
+            this.redButton.Tag = "1";
             this.redButton.UseVisualStyleBackColor = false;
+            this.redButton.Click += new System.EventHandler(this.anyButton_Click);
             // 
             // greenButton
             // 
@@ -68,14 +76,41 @@
             this.greenButton.Name = "greenButton";
             this.greenButton.Size = new System.Drawing.Size(110, 110);
             this.greenButton.TabIndex = 0;
+            this.greenButton.Tag = "0";
             this.greenButton.UseVisualStyleBackColor = false;
-            this.greenButton.Click += new System.EventHandler(this.greenButton_Click);
+            this.greenButton.Click += new System.EventHandler(this.anyButton_Click);
+            // 
+            // patternLabel
+            // 
+            this.patternLabel.AutoSize = true;
+            this.patternLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patternLabel.ForeColor = System.Drawing.Color.White;
+            this.patternLabel.Location = new System.Drawing.Point(71, 15);
+            this.patternLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.patternLabel.Name = "patternLabel";
+            this.patternLabel.Size = new System.Drawing.Size(144, 19);
+            this.patternLabel.TabIndex = 4;
+            this.patternLabel.Text = "Pattern length:";
+            // 
+            // lengthLabel
+            // 
+            this.lengthLabel.AutoSize = true;
+            this.lengthLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lengthLabel.ForeColor = System.Drawing.Color.White;
+            this.lengthLabel.Location = new System.Drawing.Point(208, 15);
+            this.lengthLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lengthLabel.Name = "lengthLabel";
+            this.lengthLabel.Size = new System.Drawing.Size(18, 19);
+            this.lengthLabel.TabIndex = 5;
+            this.lengthLabel.Text = "1";
             // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.lengthLabel);
+            this.Controls.Add(this.patternLabel);
             this.Controls.Add(this.yellowButton);
             this.Controls.Add(this.blueButton);
             this.Controls.Add(this.redButton);
@@ -85,6 +120,7 @@
             this.Size = new System.Drawing.Size(301, 300);
             this.Load += new System.EventHandler(this.GameScreen_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -94,5 +130,7 @@
         private System.Windows.Forms.Button blueButton;
         private System.Windows.Forms.Button redButton;
         private System.Windows.Forms.Button greenButton;
+        private System.Windows.Forms.Label patternLabel;
+        private System.Windows.Forms.Label lengthLabel;
     }
 }

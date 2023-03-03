@@ -16,15 +16,24 @@ namespace SimonSays
             InitializeComponent();
         }
 
-        private void newButton_Click(object sender, EventArgs e)
+        private void MenuScreen_Load(object sender, EventArgs e) //set up the menu screen with the list of high scores
         {
-            //TODO: remove this screen and start the GameScreen
+            scoresLabel.Text = "";
+
+            for (int i = 0; i < 3; i++)
+            {
+                scoresLabel.Text += $"{i + 1}. {Form1.highScore[i]}\n";
+            }
         }
 
-
-        private void exitButton_Click(object sender, EventArgs e)
+        private void newButton_Click(object sender, EventArgs e) //change the screen to let the user pick a game speed
         {
-            //TODO: end the application
+            Form1.ChangeScreen(this, new SpeedScreen());
+        }
+
+        private void exitButton_Click(object sender, EventArgs e) //exit the program
+        {
+            Application.Exit();
         }
     }
 }

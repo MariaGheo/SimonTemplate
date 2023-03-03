@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuScreen));
             this.exitButton = new System.Windows.Forms.Button();
             this.newButton = new System.Windows.Forms.Button();
+            this.scoresLabel = new System.Windows.Forms.Label();
+            this.scoreTitleLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // exitButton
@@ -69,19 +71,49 @@
             this.newButton.UseVisualStyleBackColor = false;
             this.newButton.Click += new System.EventHandler(this.newButton_Click);
             // 
-            // MainScreen
+            // scoresLabel
+            // 
+            this.scoresLabel.AutoSize = true;
+            this.scoresLabel.BackColor = System.Drawing.Color.Transparent;
+            this.scoresLabel.Font = new System.Drawing.Font("Consolas", 9F);
+            this.scoresLabel.ForeColor = System.Drawing.Color.White;
+            this.scoresLabel.Location = new System.Drawing.Point(201, 230);
+            this.scoresLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.scoresLabel.Name = "scoresLabel";
+            this.scoresLabel.Size = new System.Drawing.Size(98, 14);
+            this.scoresLabel.TabIndex = 20;
+            this.scoresLabel.Text = "[scores here]";
+            // 
+            // scoreTitleLabel
+            // 
+            this.scoreTitleLabel.AutoSize = true;
+            this.scoreTitleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.scoreTitleLabel.Font = new System.Drawing.Font("Consolas", 12F);
+            this.scoreTitleLabel.ForeColor = System.Drawing.Color.White;
+            this.scoreTitleLabel.Location = new System.Drawing.Point(191, 211);
+            this.scoreTitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.scoreTitleLabel.Name = "scoreTitleLabel";
+            this.scoreTitleLabel.Size = new System.Drawing.Size(108, 19);
+            this.scoreTitleLabel.TabIndex = 21;
+            this.scoreTitleLabel.Text = "High Scores";
+            // 
+            // MenuScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Controls.Add(this.scoreTitleLabel);
+            this.Controls.Add(this.scoresLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.newButton);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "MainScreen";
+            this.Name = "MenuScreen";
             this.Size = new System.Drawing.Size(301, 300);
+            this.Load += new System.EventHandler(this.MenuScreen_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -89,5 +121,7 @@
 
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button newButton;
+        private System.Windows.Forms.Label scoresLabel;
+        private System.Windows.Forms.Label scoreTitleLabel;
     }
 }

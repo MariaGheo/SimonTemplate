@@ -12,12 +12,6 @@ using System.Threading;
 
 namespace SimonSays
 {
-    /* Extra stuff:
-     * 1. Label that keeps track of pattern length while playing.
-     * 2. Array that keeps track of the top three scores. Label that says "New high score!". Label that shows the top three scores on the menu screen and/or the game over screen.
-     * 3. Make 3 speeds the user gets to choose between (after they click "new game" take them to a new user control where they choose, then use their response to set the wait time).
-     */
-
     public partial class GameScreen : UserControl
     {
         public static int guess;
